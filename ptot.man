@@ -1,0 +1,38 @@
+.TH ptot 1  16/1/96
+.SH NAME
+ptot - A PNG to TIF converter
+.SH SYNOPSIS
+.B  ptot filename[.png]
+.SH DESCRIPTION
+.PP
+.Bptot
+ptot allows you to view PNG (Portable Network Graphic) files by 
+converting them to TIF/TIFF/TGA format. ptot searches for the best 
+compression routine before expanding the input file.
+.PP
+The Portable Network Graphics format and is designed to be the
+successor to the once-popular GIF format.
+.PP
+Some features in favour of PNG include:
+
+      Multiple CRCs so that file integrity can be checked 
+      without viewing. 
+      Ultra-clever magic signature which can detect the most 
+      common types of file corruption.
+      Better compression than GIF, typically 10% to 30% (still 
+      working on those statistics).
+      Non-patented (you betcha!), completely lossless compression.
+      A Two-dimensional interlacing scheme. 
+      1-, 2-, 4- and 8-bit palette support (like GIF).
+      1-, 2-, 4-, 8- and 16-bit grayscale support. 
+      8- and 16-bit/color (that is, 24- and 48-bit) truecolor.
+      Full alpha blending in 8- and 16-bit modes, not merely simple 
+      on-off transparency like GIF 
+
+.PP
+
+
+.SH AUTHOR
+Lee Daniel Crocker
+<lee@piclab.com>
+<http://www.piclab.com/piclab/index.html>

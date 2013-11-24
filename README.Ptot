@@ -1,0 +1,24 @@
+
+ ptot(1)                                                             ptot(1)
+                                   16/1/96
+
+
+
+ NAME
+      ptot - A PNG to TIF converter
+
+ SYNOPSIS
+      ptot filename[.png]
+
+ DESCRIPTION
+      ptot allows you to view PNG (Portable Network Graphic) files by
+      converting them to TIF/TIFF/TGA format.
+
+      ptot searches for the best compression routine before expanding the
+      input file.
+
+
+ AUTHOR
+      Lee Daniel Crocker <lee@piclab.com>
+      <http://www.piclab.com/piclab/index.html>
+

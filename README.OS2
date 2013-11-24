@@ -1,0 +1,17 @@
+
+* Created MAKE_OS2_PNG2TIF.CMD
+* Created MAKE_OS2_PNG2PPM.CMD
+
+* Created ppm.c for PNG -> PPM (only Type P6!) conversion
+  Compile with #define _PNG2PPM_
+
+* Source recompile for OS/2 done whith VAC++ v3.0
+
+* Just one little change in sourcefiles necessary in:
+  ptot.h
+  sourrounded by #ifdef __OS2__
+
+Wolfram M. Koerner
+Wuerzburg, Germany, 21.10.1997
+w.koerner@usa.net  OR  koerner@bigfoot.com
+

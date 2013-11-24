@@ -1,0 +1,14 @@
+Package name:     png2tif
+Version number:   1.0
+Original author:  Lee D. Crocker <les@piclab.com>
+Original URL:     ftp://ftp.x.org/
+Install tree:     /opt/png2tif
+Report bugs to:   steff@csc.liv.ac.uk
+Tested on:        HP 9000/777/C110 running HP-UX 10.10
+C compiler used:  Version A.10.32.08
+Purpose:
+A viewer for PNG Graphics format files. Ptot allows you to view PNG (Portable
+Network Graphic) files by converting to the more commonly supported TIFF
+format. Ptot decompresses the image file during the process of translation.
+Date archived:    Wed 29 Jan 1997
+Special notes:    HPUX.Install is worth a read.

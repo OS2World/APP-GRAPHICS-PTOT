@@ -1,0 +1,43 @@
+# Microsoft NMAKE file
+# For MSDOS, Microsoft C 8.00
+
+LIBS = llibce
+LFLAGS = /NOD /STACK:8192 /ONERROR:NOEXE /CO
+CFLAGS = $(CFLAGS) /AL /Zi /W3 /D_X86_=1
+
+CC=cl
+LINK=link
+
+.c.obj:
+	$(CC) /c $(CFLAGS) $*.c
+
+.obj.exe:
+	$(LINK) $(LFLAGS) $**, $*.exe, $*.map, $(LIBS);
+#
+#
+
+all: ptot.exe
+
+clean:
+	del *.exe
+	del *.obj
+	del *.bak
+	del *.map
+
+ptot.exe: ptot.obj zchunks.obj tempfile.obj tiff.obj crc32.obj inflate.obj
+
+mp.exe: mp.obj crc32.obj
+
+mp.obj: mp.c ptot.h
+
+ptot.obj: ptot.c ptot.h errors.h
+
+zchunks.obj: zchunks.c ptot.h errors.h
+
+tempfile.obj: tempfile.c ptot.h errors.h
+
+tiff.obj: tiff.c ptot.h errors.h
+
+crc32.obj: crc32.c
+
+inflate.obj: inflate.c inflate.h ptot.h

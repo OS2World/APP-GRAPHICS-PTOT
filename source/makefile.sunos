@@ -1,0 +1,39 @@
+# Makefile for Sun OS/GCC
+#
+
+CC = gcc -ansi
+LN = gcc
+OBJS = ptot.o zchunks.o tiff.o crc32.o tempfile.o inflate.o
+MATHLIB = /usr/lib/libm.a
+
+.c.o:
+	$(CC) -D_SPARC_ $(CFLAGS) -c $*.c
+#
+#
+
+all: ptot
+
+clean:
+	rm ptot *.o *.tmp ptot ptot.zip ptot.tar.gz
+
+zips:
+	zip ptot.zip *.c *.h makefile.*
+	tar cf - *.c *.h makefile.* | gzip >ptot.tar.gz
+
+ptot: $(OBJS)
+	$(LN) $(LDFLAGS) -o ptot $(OBJS) $(MATHLIB)
+
+mp.o: mp.c ptot.h
+
+ptot.o: ptot.c ptot.h errors.h
+
+zchunks.o: zchunks.c ptot.h errors.h
+
+tempfile.o: tempfile.c ptot.h errors.h
+
+tiff.o: tiff.c ptot.h errors.h
+
+crc32.o: crc32.c
+
+inflate.o: inflate.c inflate.h ptot.h
+

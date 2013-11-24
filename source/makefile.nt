@@ -1,0 +1,38 @@
+# Makefile for Windows NT (Posix Subsystem)
+#
+
+!include <ntwin32.mak>
+
+cc = cl
+link = link
+
+.c.obj:
+	$(cc) $(cdebug) $(cflags) $(cvars) $(psxvars) $*.c
+
+.obj.exe:
+	$(link) $(linkdebug) $(psxflags) -out:$*.exe $** $(psxlibs)
+#
+#
+
+all: ptot.exe
+
+clean:
+	del *.exe *.obj *.bak *.pdb *.tmp
+
+ptot.exe: ptot.obj zchunks.obj tempfile.obj tiff.obj crc32.obj inflate.obj
+
+mp.exe: mp.obj crc32.obj
+
+mp.obj: mp.c ptot.h
+
+ptot.obj: ptot.c ptot.h errors.h
+
+zchunks.obj: zchunks.c ptot.h errors.h
+
+tempfile.obj: tempfile.c ptot.h errors.h
+
+tiff.obj: tiff.c ptot.h errors.h
+
+crc32.obj: crc32.c
+
+inflate.obj: inflate.c inflate.h ptot.h
